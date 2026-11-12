@@ -28,6 +28,6 @@
       };
 
       services.node-red.enable = false;
-      services.omnibin.enable = false; # Hängt sich auf bei aktivieriung warten bis es neue Version gibt
+      services.omnibin.enable = false;
     };
 }

@@ -29,6 +29,7 @@
       home-manager
       helium
       felix
+      tack
     ];
   };
 

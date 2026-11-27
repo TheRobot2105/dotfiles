@@ -66,6 +66,7 @@ in
       plasma
       tmux
       nvim
+      winboat
     ];
 
     home.username = "felix";

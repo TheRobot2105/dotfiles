@@ -21,6 +21,7 @@
         nixfmt-tree
         yubioath-flutter
         inputs.juliaup-nix.packages.${pkgs.stdenv.hostPlatform.system}.juliaup
+        nix-output-monitor
       ];
     };
 }

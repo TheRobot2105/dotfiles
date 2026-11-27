@@ -79,7 +79,7 @@
       url = "github:gmodena/nix-flatpak";
     };
     juliaup-nix = {
-      url = "github:s-celles/juliaup-nix";
+      url = "github:therobot2105/juliaup-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     omnibin = {

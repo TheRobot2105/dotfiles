@@ -35,6 +35,20 @@ in
         };
       };
 
+      # GitHub-Token gegen das API-Rate-Limit (60/h ohne Token).
+      # Wird als access-tokens in nix.conf eingebunden und so von nix
+      # und tack (über TACK_NIX_CONF_TOKENS) gelesen.
+      sops.secrets.github-token = { };
+      sops.templates."nix-access-tokens" = {
+        content = "access-tokens = github.com=${config.sops.placeholder.github-token}\n";
+        owner = config.users.users.felix.name;
+        mode = "0400";
+      };
+      nix.extraOptions = ''
+        !include ${config.sops.templates."nix-access-tokens".path}
+      '';
+      environment.variables.TACK_NIX_CONF_TOKENS = "1";
+
       # sops-nix legt fehlende Elternordner der Secrets (~/.config/sops/age,
       # ~/.ssh) als root an. Bei einer Neuinstallation gehört ~/.config dann
       # root und home-manager scheitert mit "Permission denied".

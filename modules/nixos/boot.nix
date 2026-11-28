@@ -24,17 +24,13 @@
         };
         plymouth = {
           enable = true;
-          #theme = "deus_ex";
-          themePackages = with pkgs; [
-            # By default we would install all themes
-            (adi1090x-plymouth-themes.override {
-              selected_themes = [ "deus_ex" ];
-            })
-          ];
+          theme = "nixos-chase-glitch";
+          themePackages = [inputs.nix-packages.packages.${pkgs.stdenv.hostPlatform.system}.plymouth-nixos-chase-glitch];
         };
         consoleLogLevel = 3;
         kernelParams = [
           "quiet"
+          "splash"
           "rd.udev.log_level=3"
           "rd.systemd.show_status=auto"
         ];

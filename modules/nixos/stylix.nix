@@ -37,7 +37,7 @@
         };
 
         # Eigener Plymouth-Bootscreen (deus_ex) aus boot.nix bleibt.
-        #targets.plymouth.enable = false;
+        targets.plymouth.enable = false;
 
         # gtksourceview-Overlay würde Inkscape & Co. aus dem Cache werfen.
         targets.gtksourceview.enable = false;

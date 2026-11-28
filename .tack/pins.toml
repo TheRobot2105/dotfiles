@@ -17,6 +17,7 @@ nixpkgs = "nixpkgs"
 flake-parts = "flake-parts"
 nur = "nur"
 systems = "systems"
+flake-utils = "flake-utils"
 
 # inputs.<name> fields
 #   url             required, shorturl ok, ?rev=<sha> pins an exact commit
@@ -94,3 +95,6 @@ url = "github:nix-community/stylix"
 
 [inputs.systems]
 url = "github:nix-systems/default"
+
+[inputs.nix-packages]
+url = "github:DanielTallon/nix-packages"
